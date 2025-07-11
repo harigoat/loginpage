@@ -48,6 +48,10 @@ def register():
 def forgot_password():
     return "<h3>Password recovery is not implemented yet.</h3>"
 
+@app.route("/defaultpage")
+def defaultpage():
+    return render_template("defaultpage.html")
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
