@@ -40,6 +40,7 @@ def register():
         password = request.form["password"]
         with open("users.txt", "a") as f:
             f.write(f"{username}:{password}\n")
+        return redirect(url_for("home"))
     new_user = request.args.get("new_user", "")
     return render_template("register.html", new_user=new_user)
 
