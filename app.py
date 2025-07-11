@@ -50,7 +50,7 @@ def forgot_password():
 
 @app.route("/defaultpage")
 def defaultpage():
-    return render_template("defaultpage.html")
+    return f"<h1>HI! {username}</h1>"
 
 
 if __name__ == "__main__":
