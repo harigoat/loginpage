@@ -28,7 +28,7 @@ def login():
     except FileNotFoundError:
         open("users.txt",'w').close()
     if user_found and user_correct:
-        return redirect(url_for("defaultpage"))
+        return f"<h1> HI! {username}</h1>"
     elif user_found and not user_correct:
         return "<h3 style='color:red;'>Incorrect password. Try again.</h3>"
     else:
@@ -50,7 +50,7 @@ def forgot_password():
 
 @app.route("/defaultpage")
 def defaultpage():
-    return f"<h1>HI! {username}</h1>"
+    return render_template("defaultpage.html")
 
 
 if __name__ == "__main__":
