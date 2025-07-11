@@ -1,4 +1,5 @@
 from flask import Flask, redirect, render_template,request,url_for
+import os
 
 app = Flask(__name__)
 
@@ -43,7 +44,8 @@ def register():
     return render_template("register.html", new_user=new_user)
 
 if __name__ == "__main__":
-    print("🚀 Flask app is running...")
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=True, host="0.0.0.0", port=port)
+
 
     
