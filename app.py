@@ -28,7 +28,7 @@ def login():
     except FileNotFoundError:
         open("users.txt",'w').close()
     if user_found and user_correct:
-        return f"<h2>Welcome back, {username}!</h2>"
+        return render_template("defaultpage.html")
     elif user_found and not user_correct:
         return "<h3 style='color:red;'>Incorrect password. Try again.</h3>"
     else:
