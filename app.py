@@ -43,6 +43,11 @@ def register():
     new_user = request.args.get("new_user", "")
     return render_template("register.html", new_user=new_user)
 
+@app.route("/forgot")
+def forgot_password():
+    return "<h3>Password recovery is not implemented yet.</h3>"
+
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host="0.0.0.0", port=port)
