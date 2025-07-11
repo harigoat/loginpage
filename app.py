@@ -19,7 +19,7 @@ def login():
         with open("users.txt",'r') as f:
             lines=f.readlines()
             for line in lines:
-                stored_user , stored_pass = line.strip.split(":")
+                stored_user , stored_pass = line.strip().split(":")
                 if stored_user == username:
                     user_found = True
                     if stored_pass == password:
